@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Comparação de Arboviroses</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f5f5f5;
+    }
+    h2 {
+        text-align: center;
+        color: #424242;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        background-color: #fff;
+        margin-top: 20px;
+    }
+    th, td {
+        padding: 12px 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+        vertical-align: middle;
+        position: relative; /* importante para tooltips */
+    }
+    th {
+        background-color: #424242;
+        color: #fff;
+        font-size: 1.1em;
+    }
+    tr:nth-child(even) {
+        background-color: #f0f0f0;
+    }
+    .dengue { background-color: #bbdefb; font-weight: bold; }
+    .chikungunya { background-color: #d1c4e9; font-weight: bold; }
+    .zika { background-color: #c8e6c9; font-weight: bold; }
+    .febre-amarela { background-color: #ffcdd2; font-weight: bold; }
+    .highlight { background-color: #fff176; font-weight: bold; }
+
+    /* Tooltip corrigido */
+    .tooltiptext {
+        visibility: hidden;
+        width: 220px;
+        background-color: #616161;
+        color: #fff;
+        text-align: left;
+        border-radius: 6px;
+        padding: 8px;
+        position: absolute;
+        top: -5px;
+        left: 105%;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 0.85em;
+        white-space: normal;
+    }
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+    /* Ajusta a célula para tooltip */
+    .tooltip {
+        display: inline-block;
+        position: relative;
+    }
+</style>
+</head>
+<body>
+
+<table>
+<thead>
+<tr>
+    <th>Característica</th>
+    <th>Dengue</th>
+    <th>Chikungunya</th>
+    <th>Zika</th>
+    <th>Febre Amarela</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>Início</td>
+    <td class="dengue">Agudo</td>
+    <td class="chikungunya">Agudo</td>
+    <td class="zika">Agudo ou gradual</td>
+    <td class="febre-amarela">Agudo</td>
+</tr>
+<tr>
+    <td>Febre</td>
+    <td class="dengue"><div class="tooltip">Alta (39-40°C), bifásica
+        <span class="tooltiptext">Frequente febre alta que pode ter recaídas após breve melhora.</span>
+    </div></td>
+    <td class="chikungunya"><div class="tooltip">Alta (>39°C)
+        <span class="tooltiptext">Forte, associada a intenso mal-estar.</span>
+    </div></td>
+    <td class="zika"><div class="tooltip">Baixa a moderada (&lt;38,5°C)
+        <span class="tooltiptext">Geralmente leve, pode passar despercebida.</span>
+    </div></td>
+    <td class="febre-amarela"><div class="tooltip">Alta (39-41°C), bifásica
+        <span class="tooltiptext">Primeira fase febril, seguida da fase tóxica em casos graves.</span>
+    </div></td>
+</tr>
+<tr>
+    <td>Exantema</td>
+    <td class="dengue"><div class="tooltip">Maculopapular (50%), 4º-7º dia
+        <span class="tooltiptext">Pode aparecer depois da febre inicial, às vezes com prurido.</span>
+    </div></td>
+    <td class="chikungunya"><div class="tooltip">Maculopapular (40-50%), 2º-5º dia
+        <span class="tooltiptext">Associado a prurido leve e artralgia.</span>
+    </div></td>
+    <td class="zika highlight"><div class="tooltip">Maculopapular (90-95%), 1º-2º dia
+        <span class="tooltiptext">Surge cedo, é um sinal chave de Zika.</span>
+    </div></td>
+    <td class="febre-amarela"><div class="tooltip">Raro na 1ª fase; possível na fase tóxica
+        <span class="tooltiptext">Exantema discreto, surge principalmente na fase grave.</span>
+    </div></td>
+</tr>
+<tr>
+    <td>Artralgia/Artrite</td>
+    <td class="dengue">Leve a moderada</td>
+    <td class="chikungunya highlight"><div class="tooltip">Intensa, debilitante, simétrica
+        <span class="tooltiptext">Característica chave de Chikungunya, pode evoluir para artrite crônica.</span>
+    </div></td>
+    <td class="zika">Leve a moderada</td>
+    <td class="febre-amarela">Mialgia predominante</td>
+</tr>
+<tr>
+    <td>Conjuntivite</td>
+    <td class="dengue">Não purulenta (30%)</td>
+    <td class="chikungunya">Não comum</td>
+    <td class="zika highlight"><div class="tooltip">Não purulenta (50-60%)
+        <span class="tooltiptext">Um achado frequente em Zika, útil para diferenciação.</span>
+    </div></td>
+    <td class="febre-amarela">Não comum</td>
+</tr>
+<tr>
+    <td>Hemorragias</td>
+    <td class="dengue"><div class="tooltip">Comuns nas formas graves
+        <span class="tooltiptext">Petéquias e sangramentos mucosos em casos graves.</span>
+    </div></td>
+    <td class="chikungunya">Raras</td>
+    <td class="zika">Raras</td>
+    <td class="febre-amarela highlight"><div class="tooltip">Graves na fase tóxica
+        <span class="tooltiptext">Achado marcante na fase grave da doença.</span>
+    </div></td>
+</tr>
+<tr>
+    <td>Icterícia</td>
+    <td class="dengue">Rara</td>
+    <td class="chikungunya">Rara</td>
+    <td class="zika">Rara</td>
+    <td class="febre-amarela highlight"><div class="tooltip">Marcante na fase tóxica
+        <span class="tooltiptext">Sinal clássico da fase grave de Febre Amarela.</span>
+    </div></td>
+</tr>
+<tr>
+    <td>Hepatomegalia</td>
+    <td class="dengue">Pode ocorrer</td>
+    <td class="chikungunya">Rara</td>
+    <td class="zika">Rara</td>
+    <td class="febre-amarela highlight"><div class="tooltip">Dolorosa e constante
+        <span class="tooltiptext">Característica importante para diagnóstico diferencial.</span>
+    </div></td>
+</tr>
+<tr>
+    <td>Linfadenopatia</td>
+    <td class="dengue">Comum</td>
+    <td class="chikungunya">Comum</td>
+    <td class="zika highlight"><div class="tooltip">Muito comum (60-70%)
+        <span class="tooltiptext">Frequentemente discreta, mas pode ajudar na diferenciação.</span>
+    </div></td>
+    <td class="febre-amarela">Pode ocorrer</td>
+</tr>
+<tr>
+    <td>Neutropenia/Leucopenia</td>
+    <td class="dengue highlight"><div class="tooltip">Marcante
+        <span class="tooltiptext">Achado laboratorial frequente em Dengue, útil para triagem.</span>
+    </div></td>
+    <td class="chikungunya">Moderada</td>
+    <td class="zika">Moderada</td>
+    <td class="febre-amarela">Leucopenia com neutropenia</td>
+</tr>
+<tr>
+    <td>Trombocitopenia</td>
+    <td class="dengue highlight"><div class="tooltip">&lt;100.000 (Marcante)
+        <span class="tooltiptext">Achado crítico em Dengue, ajuda a diferenciar de Zika e Chikungunya.</span>
+    </div></td>
+    <td class="chikungunya">Leve a moderada</td>
+    <td class="zika">Leve</td>
+    <td class="febre-amarela">Moderada a grave</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
